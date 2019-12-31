@@ -1,6 +1,6 @@
 <script>
-  import Column from "./Column/index.svelte";
-  import { tasks } from "../../store";
+  import Column from "./Column/index.svelte"
+  import { tasks } from "../../store"
 
   $: sortedTasks = $tasks.slice().sort((a, b) => a.updatedAt - b.updatedAt)
 </script>

@@ -1,1 +1,1 @@
-I made this app to learn svelte
+I made this app to learn how to store data to bsv using moneybutton

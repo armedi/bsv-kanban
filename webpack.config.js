@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
@@ -40,8 +41,7 @@ module.exports = {
 					 * For developing, use 'style-loader' instead.
 					 * */
           prod ? MiniCssExtractPlugin.loader : 'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          'postcss-loader'
+          'css-loader',
         ]
       }
     ]
@@ -50,7 +50,8 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css'
-    })
+    }),
+    new Dotenv()
   ],
   devtool: prod ? false : 'source-map'
 };
